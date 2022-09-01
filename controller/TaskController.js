@@ -65,4 +65,18 @@ exports.show_task=async(req,res)=>{
 }
 
 
+exports.taskfilter = async(req,res)=>{
+    try {
+        let {query} = req.body
+        const result = await taskSchema.find({status:query})
+        
+        res.status(200).json({message:"task is following",data:result})
+
+    } catch (error) {
+        
+        res.status(400).json({status:"failed",message:"please provide vallid data"})
+    }
+}
+
+
 

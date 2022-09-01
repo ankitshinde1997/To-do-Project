@@ -7,6 +7,7 @@ routes.post('/iconadd',taskcontroller.image)
 routes.post('/category/insert',taskcontroller.task_category)
 routes.post('/task/insert',taskcontroller.task_insert)
 routes.post('/task/show',taskcontroller.show_task)
+routes.post('/task/status',taskcontroller.taskfilter)
 
 
 
