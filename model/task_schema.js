@@ -5,7 +5,8 @@ const task_schema = new mongoose.Schema({
     what_i_have:String,
     Where:String,
     when:Date,
-    radio_type:String
+    radio_type:String,
+    status:String
     
 })
 

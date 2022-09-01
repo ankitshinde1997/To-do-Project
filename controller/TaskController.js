@@ -42,7 +42,8 @@ exports.task_insert= async(req,res)=>{
             what_i_have:req.body.what_i_have,
             Where:req.body.where,
             when:req.body.when,
-            radio_type:req.body.type
+            radio_type:req.body.type,
+            status:req.body.status
 
         })
         res.status(200).json({message:"task  is inserted",data:result})
@@ -55,10 +56,13 @@ exports.task_insert= async(req,res)=>{
 exports.show_task=async(req,res)=>{
     try {
         
-  const result= taskSchema.find({})
-  res.status(200).json({message:"task  is inserted",data:result})
+  const result=await taskSchema.find({categorie_id:req.body.category})
+  res.status(200).json({message:"task is following",data:result})
 
     } catch (error) {
         res.status(400).json({status:"failed",message:"please provide vallid data"})
     }
 }
+
+
+
